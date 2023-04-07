@@ -1,0 +1,25 @@
+.options button {
+    font-size: larger;
+    width: 100%;
+    min-width: 100%;
+    padding: 10px;
+    display: block;
+}
+
+.options {
+    position: absolute;
+    width: 15%;
+    min-width: 15%;
+    left: 10%;
+    top: 10%;
+}
+
+.red {
+    background-color: rgb(238, 210, 183);
+    border: none;
+    border-left: 2px solid red;
+    
+}
+.green {
+    color: green
+}

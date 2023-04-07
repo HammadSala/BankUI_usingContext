@@ -1,0 +1,47 @@
+.backgroundStyling{
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 10%;
+    background-color: rgb(238, 210, 183);
+    width: 500px;
+    height: 400px;
+    min-width: 500px;
+    min-height: 400px;
+}
+.backgroundStyling-dark {
+    background-color: rgba(68, 68, 68, 0.8);
+    color: white;
+}
+h3, h2{
+    text-align: center;
+}
+table{
+    position: relative;
+    left: 15%;
+    right: 25%;
+}
+tr, td{
+    padding: 10px;
+}
+select, input{
+    padding: 5px;
+}
+#payButton{
+    right: 5%;
+    bottom: 5%;
+    position: absolute;
+    padding: 2%;
+    font-size: 20px;
+    width: 90px;
+    border: 2px solid white;
+    box-shadow: 5px 5px 10px rgb(148, 155, 154);
+    background-color: rgb(158, 228, 126);
+}
+#payButton:active{
+    background-color: rgb(154, 160, 219);
+}
+
+#closeButton{
+    z-index: 2;
+}
