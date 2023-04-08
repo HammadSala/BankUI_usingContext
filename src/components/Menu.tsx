@@ -7,10 +7,15 @@ function Menu() {
     const [ option, setOption ] = useState(0);
     const [ theme, setTheme ] = useState("light");
 
-    const toggleTheme = useCallback(() => {
+    // const toggleTheme = useCallback(() => {
+    //     setTheme( (theme) => theme === "light" ? "dark" : "light");
+    // }
+    // ,[theme])
+
+    const toggleTheme = () =>{
         setTheme( (theme) => theme === "light" ? "dark" : "light");
     }
-    ,[theme])
+
 
     function onClick ( value : number)  {
         setOption(value);

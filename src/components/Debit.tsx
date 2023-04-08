@@ -1,4 +1,4 @@
-import ThemeContext from "../context/ThemeContext";
+import ThemeContext, { ThemeContextType} from "../context/ThemeContext";
 import "../styles/PaymentSection.css"
 import { useContext, Component , ChangeEvent, ReactNode, FormEvent } from "react"
 
@@ -19,7 +19,15 @@ type State = {
 
 
 class Debit extends Component<Props, State>{
-    static cntValue = ThemeContext;
+    /*
+    The static variable must be named contextType: 
+    When using the contextType property in a class component, you must name the static variable as contextType exactly
+    ------
+    The static variable must be assigned the context object: The value of the contextType static variable must be the context object itself,
+     not a reference to the context or a string with the name of the context.
+    */
+    static contextType = ThemeContext;
+    context!: ThemeContextType; 
 
     constructor(props : Props) {
         super(props);
@@ -39,9 +47,9 @@ class Debit extends Component<Props, State>{
         this.yearValueChange = this.yearValueChange.bind(this);
     }
 
-    componentDidMount(): void {
-        // const { theme } = this.context;
-        console.log("Mounted --->", this.context)
+    componentDidUpdate(): void {
+        const { theme } = this.context;
+        console.log("Mounted --->", theme)
     }
     onButtonClick = ( ) => {
         this.setState( { showComponent : true})
@@ -89,7 +97,8 @@ class Debit extends Component<Props, State>{
             <ThemeContext.Consumer>
                 {
                 (({theme, toggleTheme}) => (
-                    <div className={`backgroundStyling backgroundStyling-${theme} `} onClick={toggleTheme}>
+                    
+                    <div className={`backgroundStyling backgroundStyling-${theme} `}   onClick={toggleTheme}>
                         <form onSubmit={this.submitHandler}>
                             <table>
                                 <tbody>
@@ -133,6 +142,7 @@ class Debit extends Component<Props, State>{
                             </table>
                         </form>
                     </div>
+                    
                 ))
                 }
             </ThemeContext.Consumer>
